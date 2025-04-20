@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de Usuários</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gerencUsuarios.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />  
+</head>
+
+<body>
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  <div class="container">
+   
+    <aside class="sidebar" id="sidebar">
+      <h2>Perícia Odontolegista</h2>
+      
+      <a href="cadastro.html">  <span class="material-symbols-outlined">home</span> Página Inicial</a>
+      <a href="gerencUsuario.html"> <span class="material-symbols-outlined">folder</span> Casos</a>
+      <a href="cadastro.css"><span class="material-symbols-outlined">group</span> Gerenciamento de Usuários</a>
+   
+    </aside>
+   
+    <main class="main">
+      <h1>Usuários</h1>
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="Buscar..." oninput="filterUsers()">
+        <button onclick="openForm()">Adicionar</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Matrícula</th>
+            <th>Cargo</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="userTableBody"></tbody>
+      </table>
+      <div class="modal" id="userModal">
+        <button class="close-button" onclick="closeUserModal()">×</button>
+        <input type="text" id="name" placeholder="Nome">
+        <input type="text" id="matricula" placeholder="Matrícula">
+        <input type="text" id="cargo" placeholder="Cargo">
+        <button onclick="saveUser()">Salvar</button>
+      </div>
+      <div class="modal" id="viewModal">
+        <button class="close-button" onclick="closeView()">×</button>
+        <p><strong>Nome:</strong> <span id="viewName"></span></p>
+        <p><strong>Matrícula:</strong> <span id="viewMatricula"></span></p>
+        <p><strong>Cargo:</strong> <span id="viewCargo"></span></p>
+        <button onclick="closeView()">Fechar</button>
+      </div>
+    </main>
+  </div>
+<script src="gerenUsu.js">   </script>
+
+</body>
+</html>

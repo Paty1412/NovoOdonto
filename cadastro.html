@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casos - Sistema Odonto-Legal</title>
+  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+   
+
+  <aside class="sidebar" id="sidebar">
+   
+     <div class="sidebar-header">
+       <span class="material-symbols-outlined">dentistry</span>
+         <h2>Odonto-Legal</h2>
+           </div>
+                  <a href="index.html"><span class="material-symbols-outlined">home</span> Página Inicial</a>
+                 <a href="casos.html" class="active"><span class="material-symbols-outlined">folder</span> Casos</a>
+             <a href="gerencUsuario.html"><span class="material-symbols-outlined">group</span> Gerenciamento de Usuários</a>
+           <a href="login.html"><span class="material-symbols-outlined">logout</span> Sair</a>
+  </aside>
+    
+  <div class="main-content">
+     <button class="hamburger" id="menu-toggle">☰</button>
+  </div>
+ <!-------------------------------------MENU ATÉ AQUI------------------------------------>
+ 
+ <div class="main-content">
+   <div   class="case-list-item">   
+    <div class="container">
+     
+       <h1 id="case-title">Cadastro de Usuários.</h1>
+            
+        <div class="case-header">
+           
+          <div class="case-meta">
+                <span class="case-id">Nome Completo:</span>
+                <input type="text" size="74" id="nome">      
+           </div>
+        
+            <div class="case-meta">
+               <span class="case-status status-open">CPF:</span>
+                <input type="number" id="cpf"  maxlength="11" required>
+           
+                       <span class="case-status status-open">Cargo:</span>
+                    <select id="tipo" name="tipo" required><br>
+                     <option value="adm">Administrador</option>
+                      <option value="perito">Perito</option>
+                  <option value="assistente">Assistente</option>
+              </select>
+            </div>
+
+         <div class="case-meta">
+            <span class="case-id">Email:</span>
+            <input type="text"id="email"  size="85">
+           
+          </div>
+    
+ <div class="case-meta">
+     <span class="case-id">Endereço:</span>
+        <input type="text" size="81" id="endereço"> 
+         <span class="case-id">Bairro:</span>
+           <input type="text" size="30" id="bairro">
+             <span class="case-status status-open">Cidade:</span>
+          <input type="cpf" id="cidade"  required>
+        <span class="case-status status-open">UF:</span>
+    <input type="text" size="9"  id="UF"  required>
+ </div>
+    
+ <div  class="case-meta">
+    <span class="case-id">Estado:</span>
+      <input type="text" size="" id="estado"> 
+      <span class="case-status status-open">CEP:</span>
+    <input type="number" id="senha"  maxlength="" required>
+</div>
+
+<div class="case-meta">
+  <span class="case-status status-open">Celular:</span>
+   <input type="cpf" id="senha"  maxlength="" required>
+   <span class="case-status status-open">Telefone:</span>
+  <input type="cpf" id="senha"  maxlength="" required>
+</div> 
+
+<div class="case-meta">
+    <span class="case-status status-open">Senha de Acesso:</span> 
+    <input type="cpf" id="senha"  maxlength="" required>  
+</div>  
+
+
+ <div class="case-actions">
+    <button type="button" class="btn btn-edit" onclick="salvarDados()"> Salvar</button>
+    <button id="change-status" class="btn btn-status" onclick="limparFormulario()">Limpar</button>
+  </div>  
+ </div>
+   </div>        
+     </div> 
+       </div>
+    
+  
+    <script src="cadastro.js"></script>
+   
+</body>
+</html>
