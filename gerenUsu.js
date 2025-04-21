@@ -68,7 +68,7 @@ function filterUsers() {
     u.matricula.includes(query) ||
     u.cargo.toLowerCase().includes(query)
   );
-  currentPage = 1,2;
+  currentPage = 1,;
   displayUsers(usuariosFiltrados);
 }
 
