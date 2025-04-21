@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gerenciamento de Usuários</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="gerencUsuarios.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />  
-</head>
 
+</head>
 <body>
-  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  
+ <div class="main-content">
+    <button class="hamburger" id="menu-toggle">☰</button>
+ </div>
+ 
   <div class="container">
-   
-    <aside class="sidebar" id="sidebar">
-      <h2>Perícia Odontolegista</h2>
-      
-      <a href="cadastro.html">  <span class="material-symbols-outlined">home</span> Página Inicial</a>
-      <a href="gerencUsuario.html"> <span class="material-symbols-outlined">folder</span> Casos</a>
-      <a href="cadastro.css"><span class="material-symbols-outlined">group</span> Gerenciamento de Usuários</a>
-   
+  
+    <aside id="sidebar">
+      <h2><i class="fas fa-tooth"></i> Perícia Odontologista</h2>
+      <ul>
+        <li><i class="fas fa-home"></i> Pagina inicial</li>
+        <li><i class="fas fa-file-medical"></i> Casos</li>
+        <li><i class="fas fa-users"></i> Usuários</li>
+        <li><i class="fas fa-sign-out-alt"></i> Sair</li>
+      </ul>
     </aside>
    
-    <main class="main">
-      <h1>Usuários</h1>
-      <div class="controls">
-        <input type="text" id="searchInput" placeholder="Buscar..." oninput="filterUsers()">
-        <button onclick="openForm()">Adicionar</button>
+    <main>
+      <div class="header">
+        <h1>Usuários</h1>
+        <button class="add-btn" onclick="abrirModalAdicionar()"><i class="fas fa-user-plus"></i> Adicionar</button>
+      </div>
+      <div class="search-filter">
+        <input type="text" id="searchInput" placeholder="Buscar Usuário" oninput="filterUsers()" />
+        <button><i class="fas fa-search"></i></button>
+        <span>Filtrar por <strong>Matrícula</strong> | <strong>Cargo</strong></span>
       </div>
       <table>
         <thead>
@@ -36,28 +42,25 @@
             <th>Nome</th>
             <th>Matrícula</th>
             <th>Cargo</th>
-            <th>Ações</th>
+            <th>Editar</th>
           </tr>
         </thead>
-        <tbody id="userTableBody"></tbody>
+        <tbody id="userTable"></tbody>
       </table>
-      <div class="modal" id="userModal">
-        <button class="close-button" onclick="closeUserModal()">×</button>
-        <input type="text" id="name" placeholder="Nome">
-        <input type="text" id="matricula" placeholder="Matrícula">
-        <input type="text" id="cargo" placeholder="Cargo">
-        <button onclick="saveUser()">Salvar</button>
-      </div>
-      <div class="modal" id="viewModal">
-        <button class="close-button" onclick="closeView()">×</button>
-        <p><strong>Nome:</strong> <span id="viewName"></span></p>
-        <p><strong>Matrícula:</strong> <span id="viewMatricula"></span></p>
-        <p><strong>Cargo:</strong> <span id="viewCargo"></span></p>
-        <button onclick="closeView()">Fechar</button>
-      </div>
+      <div class="pagination" id="pagination"></div>
     </main>
   </div>
-<script src="gerenUsu.js">   </script>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h3 id="modalTitle"></h3>
+      <input type="text" id="nomeInput" placeholder="Nome">
+      <input type="text" id="matriculaInput" placeholder="Matrícula">
+      <input type="text" id="cargoInput" placeholder="Cargo">
+      <button onclick="salvarUsuario()">Salvar</button>
+    </div>
+  </div>
+<script src="gerenUsu.js"></script>
 
 </body>
 </html>
